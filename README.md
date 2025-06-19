@@ -47,8 +47,44 @@ The utility metric is a representation of how likely this word is to be useful. 
 
 We assume that P(win) and P(find info) are independent. This makes the formula much more tiny and efficient. Thus P(useful) = P(win) + (1 - P(win)) * P(find info).
 
+# Example playthrough
+
+Here's an example playthrough using the tool to guess the word "prune".
+You can reproduce it by playing a game at [this](https://www.wordle.name/en/) Wordle emulator.
+
+```
+% python3 cheat.py
+                word | P(useful)        | P(win)           | P(finds info)
+               AEROS | 90%              | 0%               | 90%
+               AROSE | 90%              | 0%               | 90%
+               SOARE | 90%              | 0%               | 90%
+               ARISE | 90%              | 0%               | 90%
+               RAISE | 90%              | 0%               | 90%
+--- enter selected word, then colors ---
+> AEROS
+> AYYAA
+                word | P(useful)        | P(win)           | P(finds info)
+               LITER | 82%              | 0%               | 82%
+               LITRE | 82%              | 0%               | 82%
+               TILER | 82%              | 0%               | 82%
+               LINER | 82%              | 0%               | 82%
+               INERT | 82%              | 0%               | 82%
+--- enter selected word, then colors ---
+> LITER
+> AAAYY
+                word | P(useful)        | P(win)           | P(finds info)
+               PRUNE | 78%              | 0%               | 78%
+               RUNCE | 78%              | 0%               | 78%
+               CRYNE | 77%              | 0%               | 77%
+               DRUPE | 77%              | 0%               | 77%
+               PRUDE | 77%              | 0%               | 77%
+--- enter selected word, then colors ---
+> PRUNE
+> GGGGG
+--- YOU WIN!! ---
+```
+
 # Credits
 
-Word list:
-https://gist.githubusercontent.com/dracos/dd0668f281e685bad51479e5acaadb93/raw/6bfa15d263d6d5b63840a8e5b64e04b382fdb079/valid-wordle-words.txt
+Thanks to `dracos` for the [word list](https://gist.githubusercontent.com/dracos/dd0668f281e685bad51479e5acaadb93/raw/6bfa15d263d6d5b63840a8e5b64e04b382fdb079/valid-wordle-words.txt).
 
